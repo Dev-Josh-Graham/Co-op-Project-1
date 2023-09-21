@@ -16,10 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Setting the instance variables for each button
     private Button btnSnackbar1, btnSnackbar2, btnSnackbar3, btnSnackbar4, btnSnackbar5;
-    private int themestate = 1;
 
     // Variable to track the current theme
-    private int themeState = 1;
+    private int themestate = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 // Instantiating a Snackbar object
                 Snackbar snackbar = Snackbar.make(view, "I'm a plain old snackbar!", BaseTransientBottomBar.LENGTH_LONG);
 
+                if (themestate == 2){
+                    snackbar.setBackgroundTint(Color.parseColor("#D3D3D3"));
+                }
                 // Displaying the Snackbar
                 snackbar.show();
             }
