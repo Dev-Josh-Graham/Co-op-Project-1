@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Setting the instance variables for each button
     private Button btnSnackbar1, btnSnackbar2, btnSnackbar3, btnSnackbar4;
+
+    // Variable to track the current theme
+    private int themeState = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
                 // Setting the text color of the Snackbar
                 snackbar.setTextColor(Color.parseColor("#FF4500"));
+
+
+                snackbar.setBackgroundTint(Color.parseColor("#008b00"));
 
                 // Displaying the Snackbar
                 snackbar.show();
@@ -82,6 +89,12 @@ public class MainActivity extends AppCompatActivity {
                         snackbar.dismiss();
                     }
                 });
+
+                View snackbarLayout = snackbar.getView();
+                TextView textView = (TextView)snackbarLayout.findViewById(com.google.android.material.R.id.snackbar_action);
+                textView.setText("");
+                textView.setCompoundDrawablesWithIntrinsicBounds(R.drawable.close_circle_svgrepo_com, 0, 0, 0);
+
 
                 // Setting the text color of the Snackbar action button
                 snackbar.setActionTextColor(Color.parseColor("#FF4500"));
