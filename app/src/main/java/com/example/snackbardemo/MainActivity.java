@@ -110,10 +110,20 @@ public class MainActivity extends AppCompatActivity {
                         if (themestate == 1){
                             themestate = 2;
                             layout.setBackgroundResource(R.color.black);
+                            btnSnackbar1.setBackgroundColor(Color.parseColor("#3eab5b"));
+                            btnSnackbar2.setBackgroundColor(Color.parseColor("#3eab5b"));
+                            btnSnackbar3.setBackgroundColor(Color.parseColor("#3eab5b"));
+                            btnSnackbar4.setBackgroundColor(Color.parseColor("#3eab5b"));
+                            btnSnackbar5.setBackgroundColor(Color.parseColor("#3eab5b"));
                         }else if(themestate == 2)
                         {
                             themestate = 1;
                             layout.setBackgroundResource(R.color.white);
+                            btnSnackbar1.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar2.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar3.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar4.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar5.setBackgroundColor(Color.parseColor("#6750a4"));
                         }
                     }
                 });
