@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
@@ -14,7 +15,8 @@ import com.google.android.material.snackbar.Snackbar;
 public class MainActivity extends AppCompatActivity {
 
     // Setting the instance variables for each button
-    private Button btnSnackbar1, btnSnackbar2, btnSnackbar3, btnSnackbar4;
+    private Button btnSnackbar1, btnSnackbar2, btnSnackbar3, btnSnackbar4, btnSnackbar5;
+    private int themestate = 1;
 
     // Variable to track the current theme
     private int themeState = 1;
@@ -24,11 +26,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final ConstraintLayout layout;
+        layout = findViewById(R.id.cl);
+
+
         // Associating each button variable to its ID
         btnSnackbar1 = findViewById(R.id.button);
         btnSnackbar2 = findViewById(R.id.button2);
         btnSnackbar3 = findViewById(R.id.button3);
         btnSnackbar4 = findViewById(R.id.button4);
+        btnSnackbar5 = findViewById(R.id.button5);
 
         // Setting anonymous "On Click" listeners for each button
         btnSnackbar1.setOnClickListener(new View.OnClickListener(){
@@ -102,6 +109,31 @@ public class MainActivity extends AppCompatActivity {
                 // Displaying the Snackbar
                 snackbar.show();
             }
+        });
+
+        btnSnackbar5.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view)
+            {
+                Snackbar snackbar = Snackbar.make(view, "Confirm Theme change?", BaseTransientBottomBar.LENGTH_INDEFINITE);
+                snackbar.setAction("Change Theme", new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+
+                        if (themestate == 1){
+                            themestate = 2;
+                            layout.setBackgroundResource(R.color.black);
+                        }else if(themestate == 2)
+                        {
+                            themestate = 1;
+                            layout.setBackgroundResource(R.color.white);
+                        }
+                    }
+                });
+
+                snackbar.show();
+            }
+
         });
     }
 }
