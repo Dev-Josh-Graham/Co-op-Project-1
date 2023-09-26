@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar snackbar = Snackbar.make(view, "I'm a plain old snackbar!", BaseTransientBottomBar.LENGTH_LONG);
 
                 if (themestate == 2){
-                    snackbar.setBackgroundTint(Color.parseColor("#D3D3D3"));
+                    snackbar.setBackgroundTint(Color.parseColor("#636363"));
                 }
                 // Displaying the Snackbar
                 snackbar.show();
@@ -135,6 +135,12 @@ public class MainActivity extends AppCompatActivity {
                         {
                             themestate = 1;
                             layout.setBackgroundResource(R.color.white);
+                            btnSnackbar1.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar2.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar3.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar4.setBackgroundColor(Color.parseColor("#6750a4"));
+                            btnSnackbar5.setBackgroundColor(Color.parseColor("#6750a4"));
+
                         }
                     }
                 });
